@@ -1,0 +1,27 @@
+<ul *ngIf="tasks && tasks.length">
+  <li *ngFor="let task of tasks; index as i">
+    <div class="details">
+      <div class="basic">
+        <span>{{task.title}}</span>
+        <span>{{task.price * (1 + task.vat) | currency:'GBP'}}</span>
+      </div>
+      <div class="breakdown">
+        <div class="table">
+          <div class="table-row header">
+            <div class="table-cell">Time</div>
+            <div class="table-cell">Cost</div>
+            <div class="table-cell">Profit</div>
+            <div class="table-cell">Vat</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">{{task.time + ' ' + (task.unit | titlecase)}}</div>
+            <div class="table-cell">{{task.cost | currency:'GBP'}}</div>
+            <div class="table-cell">{{task.price - task.cost | currency:'GBP'}}</div>
+            <div class="table-cell">{{task.price * task.vat | currency:'GBP'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-icon color="danger" name="trash-outline" (click)="deleteTask(i)"></ion-icon>
+  </li>
+</ul>

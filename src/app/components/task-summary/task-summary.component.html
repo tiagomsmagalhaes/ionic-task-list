@@ -1,0 +1,9 @@
+<div class="breakdown">
+    <span>Total labour cost:</span><span color="danger">{{cost | currency:'GBP'}}</span>
+    <span>Total labour profit:</span><span>{{profit | currency:'GBP'}}</span>
+    <span>Subtotal:</span><span>{{subtotal | currency:'GBP'}}</span>
+    <span>VAT:</span><span>{{vat | currency:'GBP'}}</span>
+</div>
+<div class="total">
+  <span>Total labour price:</span><span>{{subtotal + vat | currency:'GBP'}}</span>
+</div>

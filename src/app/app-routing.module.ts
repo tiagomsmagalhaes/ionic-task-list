@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'tasks',
     pathMatch: 'full'
+  },
+  {
+    path: 'tasks',
+    loadChildren: () => import('./pages/tasks/tasks.module').then( m => m.TasksPageModule)
+  },
+  {
+    path: 'add-task',
+    loadChildren: () => import('./pages/add-task/add-task.module').then( m => m.AddTaskPageModule)
   },
 ];
 

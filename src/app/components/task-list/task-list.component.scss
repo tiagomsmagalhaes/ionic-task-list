@@ -1,0 +1,54 @@
+:host {
+    ul {
+        border: 1px solid white; 
+        border-radius: 4px;
+        padding-left: 0;
+
+        padding: 4px;
+
+        li {
+            list-style-type: none;
+            // height: 50px;
+            border-radius: 4px;
+            // border: 1px solid #54a1d4;
+            border: 1px solid #bedcef;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            div.details {
+                flex: 1;
+
+                div.basic {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                div.breakdown {
+                    div.table {
+                        display: table;
+                        width: 100%;
+                        border-collapse: collapse;
+
+                        div.table-row {
+                            display: table-row;
+
+                            &.header {
+                                border-bottom: 1px dashed red;
+                            }
+                        }
+                        div.table-cell {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+
+            + li {
+                margin-top: 4px;
+            }
+        }
+    }
+}

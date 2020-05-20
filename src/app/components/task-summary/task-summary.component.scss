@@ -1,0 +1,16 @@
+:host {
+    div{
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        row-gap: 4px;
+
+        span {
+            text-align: right;
+        }
+
+        &.total {
+
+        }
+    } 
+}

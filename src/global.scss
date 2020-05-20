@@ -24,3 +24,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: Muli;
+    src: url('assets/fonts/Muli-VariableFont_wght.ttf') format("truetype-variations");
+}
+
+* {
+    font-family: Muli;
+}
