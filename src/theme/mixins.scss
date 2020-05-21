@@ -1,0 +1,14 @@
+@mixin form {
+    border: 1px solid #22265d;
+    border-radius: 4px;
+    height: 60px;
+}
+
+@mixin form-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #22265d;
+    padding-left: 4px;
+    margin-bottom: 5px;
+
+}

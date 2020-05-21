@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app-state.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -14,39 +17,21 @@ export class TasksPage implements OnInit {
 
 
   constructor(
-    private taskService: TaskService
-  ) {
-
-  }
+    private store: Store<AppState>,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.tasks$ = this.store.select(store => store.tasks)
 
-    this.tasks = [
-      {
-        title: 'Plaster living Room',
-        time: 5,
-        unit: 'hours',
-        vat: 0.2,
-        cost: 50,
-        price: 120
-      },
-      {
-        title: 'Fix boiler',
-        time: 10,
-        unit: 'hours',
-        vat: 0.2,
-        cost: 100,
-        price: 240
-      },
-      {
-        title: 'Paint walls',
-        time: 5,
-        unit: 'hours',
-        vat: 0.2,
-        cost: 50,
-        price: 120
-      },
-    ]
+    // this.taskService.getAll({})
   }
+
+  addTask(event){
+    console.log('yo');
+    this.router.navigate(['/add-task'])
+    
+  }
+
 
 }

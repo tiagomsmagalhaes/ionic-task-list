@@ -7,12 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { AddTaskPageRoutingModule } from './add-task-routing.module';
 
 import { AddTaskPage } from './add-task.page';
+import { SharedModule } from 'src/app/shared.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    SharedModule,
+    ComponentsModule,
     AddTaskPageRoutingModule
   ],
   declarations: [AddTaskPage]

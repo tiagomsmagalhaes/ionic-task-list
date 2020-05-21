@@ -1,5 +1,5 @@
-<ul *ngIf="tasks && tasks.length">
-  <li *ngFor="let task of tasks; index as i">
+<ul *ngIf="tasks$ && (tasks$ | async).length">
+  <li *ngFor="let task of tasks$ | async; index as i">
     <div class="details">
       <div class="basic">
         <span>{{task.title}}</span>
@@ -22,6 +22,6 @@
         </div>
       </div>
     </div>
-    <ion-icon color="danger" name="trash-outline" (click)="deleteTask(i)"></ion-icon>
+    <ion-icon color="danger" name="trash-outline" (click)="deleteTask(task)"></ion-icon>
   </li>
 </ul>

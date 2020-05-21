@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add-task</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-grid [formGroup]="form">
+    <ion-row>
+      <ion-col  class="input">
+        <label for="">Task name:</label>
+        <input type="text" formControlName="title">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="input" size="6">
+        <label for="">Task cost</label>
+        <input type="text" formControlName="cost">
+      </ion-col>
+      <ion-col class="input" size="6">
+        <label for="">Task price</label>
+        <input type="text" formControlName="price">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="input">
+        <label for="">VAT rate:</label>
+        <ion-select interface="action-sheet" formControlName="vat">
+          <ion-select-option value="0.2">20%</ion-select-option>
+          <ion-select-option value="0.05">5%</ion-select-option>
+          <ion-select-option value="0">0%</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <label for="">Estimated task duration:</label>
+        <ion-row>
+          <ion-col class="input" size="6">
+            <app-stepper formControlName="time"></app-stepper>
+          </ion-col>
+          <ion-col class="input" size="6">
+            <ion-select interface="action-sheet" formControlName="unit" class="unit">
+              <ion-select-option value="hours">Hours</ion-select-option>
+              <ion-select-option value="days">Days</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <!-- <ion-col class="input" size="6">Col2</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        
 
+        <app-contact formControlName="assignee"></app-contact>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button (click)="createTask()">Save</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

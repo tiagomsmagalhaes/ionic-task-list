@@ -1,0 +1,9 @@
+@import '../../../theme/mixins.scss';
+
+div#contact-container {
+    @include form;
+
+}
+label {
+    @include form-label;
+}
