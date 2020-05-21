@@ -1,0 +1,13 @@
+{
+  "appId": "pt.tiagomagalhaes.ionicbom",
+  "appName": "ios",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

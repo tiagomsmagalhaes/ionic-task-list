@@ -8,12 +8,15 @@
     </ion-row>
     <ion-row>
       <ion-col class="input" size="6">
-        <label for="">Task cost</label>
-        <input type="text" formControlName="cost">
+        <label for="">Task cost (£):</label>
+        <input type="number" pattern="[0-9]*" formControlName="cost">
+        <span>(Optional)</span>
       </ion-col>
       <ion-col class="input" size="6">
-        <label for="">Task price</label>
-        <input type="text" formControlName="price">
+        <label for="">Task price (£):</label>
+        <input type="number" pattern="[0-9]*" formControlName="price">
+        <span>(Optional)</span>
+
       </ion-col>
     </ion-row>
     <ion-row>
@@ -24,12 +27,16 @@
           <ion-select-option value="0.05">5%</ion-select-option>
           <ion-select-option value="0">0%</ion-select-option>
         </ion-select>
+        <span>(Optional)</span>
+
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col class="input">
         <label for="">Estimated task duration:</label>
-        <ion-row>
+        <span>(Optional)</span>
+
+        <ion-row class="stepper">
           <ion-col class="input" size="6">
             <app-stepper formControlName="time"></app-stepper>
           </ion-col>

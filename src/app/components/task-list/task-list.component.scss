@@ -12,6 +12,7 @@
             border-radius: 4px;
             // border: 1px solid #54a1d4;
             border: 1px solid #bedcef;
+            border-left: 10px solid #54a1d4;
             padding: 10px;
 
             display: flex;
@@ -20,10 +21,16 @@
 
             div.details {
                 flex: 1;
+                margin-right: 10px;
 
                 div.basic {
                     display: flex;
                     justify-content: space-between;
+
+                    span.price {
+                        color: var(--price-color);
+                        font-weight: bold;
+                    }
                 }
 
                 div.breakdown {
@@ -36,11 +43,38 @@
                             display: table-row;
 
                             &.header {
-                                border-bottom: 1px dashed red;
+                                border-bottom: 1px dashed #8c8c8c;
+
+                                div.table-cell {
+                                    font-size: 10px;
+                                    color: #4b4b4b;
+                                    padding-bottom: 5px;
+                                    padding-top: 0 !important;
+                                }
                             }
                         }
                         div.table-cell {
                             display: table-cell;
+                            font-size: 12px;
+                            font-weight: bold;
+                            padding-top: 5px;
+
+                            &.label {
+                                color: var(--label-color);
+                                // font-weight: normal;
+                            }
+                            &.total {
+                                color: var(--total-color);
+                            }
+                            &.vat {
+                                color: var(--vat-color);
+                            }
+                            &.profit {
+                                color: var(--profit-color);
+                            }
+                            &.cost {
+                                color: var(--cost-color);
+                            }
                         }
                     }
                 }
@@ -49,6 +83,19 @@
             + li {
                 margin-top: 4px;
             }
+        }
+    }
+
+    div.no-tasks {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        p {
+            text-align: center;
+            margin: 0;
         }
     }
 }

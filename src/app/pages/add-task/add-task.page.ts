@@ -8,7 +8,7 @@ import { filter, tap, switchMap, map } from "rxjs/operators";
 
 
 import { v4 as uuid } from "uuid";
-import { ActivatedRoute, RouterState, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { getTaskById } from 'src/app/store/task.selectors';
 @Component({
   selector: 'app-add-task',
@@ -42,6 +42,7 @@ export class AddTaskPage implements OnInit {
       filter(params => !!Object.keys(params).length),
       tap(() => this.edit = true),
       switchMap(params => this.store.select(getTaskById(params.id))),
+      // tap(task => console.log(task)),
       map(task => ({...task, vat: task.vat.toString()}))
     ).subscribe(task => this.form.patchValue(task))
   }
@@ -49,8 +50,6 @@ export class AddTaskPage implements OnInit {
   createTask() {
 
     if (this.edit) {
-      // this.store.select(getTaskById())
-      console.log('edit')
       const id = this.form.get('id').value;
       const task: Task = {
         id: this.form.get('id').value,
@@ -60,6 +59,7 @@ export class AddTaskPage implements OnInit {
         vat: +this.form.get('vat').value,
         time: +this.form.get('time').value,
         unit: this.form.get('unit').value,
+        assignee: this.form.get('assignee').value,
       }
       this.store.dispatch(new EditTaskAction(id, task))
     } else {
@@ -71,8 +71,8 @@ export class AddTaskPage implements OnInit {
           vat: +this.form.get('vat').value,
           time: +this.form.get('time').value,
           unit: this.form.get('unit').value,
+          assignee: this.form.get('assignee').value,
         }
-        console.log(task)
     
         this.store.dispatch(new AddTaskAction(task))
     }

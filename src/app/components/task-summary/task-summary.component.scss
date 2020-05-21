@@ -1,3 +1,5 @@
+// @import '../../../theme/variables.scss';
+
 :host {
     div{
         padding: 8px;
@@ -7,10 +9,32 @@
 
         span {
             text-align: right;
+            font-size: 14px;
+            font-weight: bold;
+            &.label {
+                color: var(--label-color);
+                font-weight: normal;
+            }
+            &.total {
+                color: var(--total-color);
+            }
+            &.vat {
+                color: var(--vat-color);
+            }
+            &.profit {
+                color: var(--profit-color);
+            }
+            &.cost {
+                color: var(--cost-color);
+            }
         }
 
-        &.total {
-
-        }
     } 
+
+    div.divider {
+        height: 1px;
+        background: #d8d8d8;
+        padding: 0;
+        margin-left: 20%;
+    }
 }

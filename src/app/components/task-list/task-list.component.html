@@ -3,7 +3,7 @@
     <div class="details">
       <div class="basic">
         <span>{{task.title}}</span>
-        <span>{{task.price * (1 + task.vat) | currency:'GBP'}}</span>
+        <span class="price">{{task.price * (1 + task.vat) | currency:'GBP'}}</span>
       </div>
       <div class="breakdown">
         <div class="table">
@@ -15,9 +15,9 @@
           </div>
           <div class="table-row">
             <div class="table-cell">{{task.time + ' ' + (task.unit | titlecase)}}</div>
-            <div class="table-cell">{{task.cost | currency:'GBP'}}</div>
-            <div class="table-cell">{{task.price - task.cost | currency:'GBP'}}</div>
-            <div class="table-cell">{{task.price * task.vat | currency:'GBP'}}</div>
+            <div class="table-cell cost">{{task.cost | currency:'GBP'}}</div>
+            <div class="table-cell profit">{{task.price - task.cost | currency:'GBP'}}</div>
+            <div class="table-cell vat">{{task.price * task.vat | currency:'GBP'}}</div>
           </div>
         </div>
       </div>
@@ -25,3 +25,7 @@
     <ion-icon color="danger" name="trash-outline" (click)="deleteTask(task)"></ion-icon>
   </li>
 </ul>
+
+<div class="no-tasks" *ngIf="!(tasks$ | async).length">
+  <p>No tasks available.</p><p> Create one clicking below</p>
+</div>

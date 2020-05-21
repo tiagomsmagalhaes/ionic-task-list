@@ -28,8 +28,38 @@
 
 @font-face {
     font-family: Muli;
-    src: url('assets/fonts/Muli-VariableFont_wght.ttf') format("truetype-variations");
+    src: url('assets/fonts/Muli-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: Muli;
+    src: url('assets/fonts/Muli-Bold.ttf') format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('assets/fonts/Muli-ExtraBold.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 800;
+}
+
+// @font-face {
+//     font-family: Muli;
+//     src: url('assets/fonts/Muli-Regular.ttf') format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: Muli;
+//     src: url('assets/fonts/Muli-Regular.ttf') format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 * {
     font-family: Muli;

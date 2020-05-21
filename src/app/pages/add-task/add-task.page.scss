@@ -1,6 +1,21 @@
 @import '../../../theme/mixins.scss';
 
 
+:host {
+    @include iphone-x;
+
+}
+ion-content {
+    --padding-top: 10px
+}
+
+input {
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+        color: white;
+    }
+}
+
 ion-col.input {
     display: flex;
     flex-direction: column;
@@ -8,10 +23,24 @@ ion-col.input {
     + ion-col {
         margin-right:-10px;
     }
+
+    span {
+        position: absolute;
+        right: 5px;
+        font-size: 10px;
+        color: #9f9f9f;
+    }
 }
 
 ion-select {
    @include form;
+   position: relative;
+   span {
+        position: absolute;
+        right: 5px;
+        font-size: 10px;
+        color: #9f9f9f;
+    }
 
 }
 
@@ -31,4 +60,15 @@ input, ion-select:not(.unit) {
     @include form;
 
     padding-left: 4px;
+}
+
+
+ion-row.stepper {
+    ion-col {
+        padding: 0 5px ;
+
+        &:last-child {
+            padding-right: 0px;
+        }
+    }
 }

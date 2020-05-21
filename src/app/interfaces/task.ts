@@ -7,4 +7,5 @@ export interface Task {
     price: number;
     vat: number;
     profit?: number;
+    assignee?: string;
 }

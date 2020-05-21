@@ -74,6 +74,15 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+
+  --profit-color: #34ba00;
+  --cost-color: #c40118;
+  --vat-color: #686868;
+  --total-color: #1f82c3;
+  --label-color: #3f3f3f;
+  --price-color: #22265d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +154,14 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+
+    --profit-color: #34ba00;
+    --cost-color: #c40118;
+    --vat-color: #686868;
+    --total-color: #1f82c3;
+    --label-color: white;
+    --price-color: lightblue;
   }
 
   /*
@@ -182,6 +199,13 @@
     --ion-toolbar-background: #0d0d0d;
 
     --ion-item-background: #000000;
+
+    --profit-color: #34ba00;
+    --cost-color: #c40118;
+    --vat-color: #686868;
+    --total-color: #1f82c3;
+    --label-color: white;
+    --price-color: lightblue;
   }
 
 
@@ -224,5 +248,13 @@
     --ion-toolbar-background: #1f1f1f;
 
     --ion-tab-bar-background: #1f1f1f;
+
+
+    --profit-color: #34ba00;
+    --cost-color: #c40118;
+    --vat-color: #686868;
+    --total-color: #1f82c3;
+    --label-color: white;
+    --price-color: lightblue;
   }
 }

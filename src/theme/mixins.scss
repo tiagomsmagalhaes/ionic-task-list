@@ -2,13 +2,28 @@
     border: 1px solid #22265d;
     border-radius: 4px;
     height: 60px;
+
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid white;
+
+    }
 }
 
 @mixin form-label {
     font-size: 10px;
-    font-weight: bold;
+    font-weight: 800;
     color: #22265d;
     padding-left: 4px;
     margin-bottom: 5px;
 
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+    
+
+}
+
+@mixin iphone-x {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }

@@ -1,9 +1,12 @@
-<div class="breakdown">
-    <span>Total labour cost:</span><span color="danger">{{cost | currency:'GBP'}}</span>
-    <span>Total labour profit:</span><span>{{profit | currency:'GBP'}}</span>
-    <span>Subtotal:</span><span>{{subtotal | currency:'GBP'}}</span>
-    <span>VAT:</span><span>{{vat | currency:'GBP'}}</span>
+<ng-container  *ngIf="show">
+  <div class="breakdown">
+    <span class="label">Total labour cost:</span><span class="cost">{{cost | currency:'GBP'}}</span>
+    <span class="label">Total labour profit:</span><span class="profit">{{profit | currency:'GBP'}}</span>
+    <span class="label">Subtotal:</span><span>{{subtotal | currency:'GBP'}}</span>
+    <span class="label">VAT:</span><span class="vat">{{vat | currency:'GBP'}}</span>
 </div>
-<div class="total">
-  <span>Total labour price:</span><span>{{subtotal + vat | currency:'GBP'}}</span>
+<div class="divider"></div>
+<div class="total-container">
+  <span>Total labour price:</span><span class="total">{{subtotal + vat | currency:'GBP'}}</span>
 </div>
+</ng-container>
