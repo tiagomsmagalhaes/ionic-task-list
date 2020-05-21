@@ -21,7 +21,7 @@ export class StepperComponent implements OnInit, ControlValueAccessor {
   constructor() { }
 
   ngOnInit() {
-    this.control = new FormControl(null, Validators.min(1))
+    this.control = new FormControl(0, Validators.min(1))
   }
 
   writeValue(value: number) {
@@ -41,13 +41,24 @@ export class StepperComponent implements OnInit, ControlValueAccessor {
   }
 
   increment() {
-    this.control.setValue(parseInt(this.control.value, 10) + 1)
+    if (this.control.value) {
+      this.control.setValue(parseInt(this.control.value, 10) + 1)
+    } else {
+      this.control.setValue(1)
+      
+    }
 
     this.propagateChange(this.control.value);
   }
 
   decrement() {
-    this.control.setValue(parseInt(this.control.value, 10) - 1)
+
+    if (this.control.value) {
+      this.control.setValue(parseInt(this.control.value, 10) - 1)
+      
+    } else {
+      this.control.setValue(1);
+    }
     this.propagateChange(this.control.value);
   }
 

@@ -10,17 +10,17 @@ export enum TaskActionTypes {
 export class AddTaskAction implements Action {
     readonly type = TaskActionTypes.ADD_TASK;
 
-    constructor(public task: Task) {}
+    constructor(public payload: Task) {}
 }
 export class EditTaskAction implements Action {
     readonly type = TaskActionTypes.EDIT_TASK;
 
-    constructor(public task: Task) {}
+    constructor(public id: string, public payload: Task) {}
 }
 export class DeleteTaskAction implements Action {
     readonly type = TaskActionTypes.DELETE_TASK;
 
-    constructor(public task: Task) {}
+    constructor(public payload: string) {}
 }
 
 

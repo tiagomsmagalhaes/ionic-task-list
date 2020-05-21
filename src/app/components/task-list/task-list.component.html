@@ -1,5 +1,5 @@
 <ul *ngIf="tasks$ && (tasks$ | async).length">
-  <li *ngFor="let task of tasks$ | async; index as i">
+  <li *ngFor="let task of tasks$ | async; index as i" (click)="editTask(task)">
     <div class="details">
       <div class="basic">
         <span>{{task.title}}</span>
